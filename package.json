@@ -1,31 +1,56 @@
 {
   "name": "storybook",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "env-cmd -f start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "test:app": "react-scripts test",
+    "start": "env-cmd -f .env.webapp react-scripts start",
+    "test:storybook": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "env-cmd -f .env start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@storybook/addon-actions": "^6.2.9",
     "@storybook/addon-console": "^1.2.3",
     "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-info": "^5.3.21",
+    "@storybook/addon-knobs": "^6.2.9",
     "@storybook/addon-links": "^6.2.9",
     "@storybook/addon-storyshots": "^6.2.9",
+    "@storybook/addons": "^6.2.9",
     "@storybook/node-logger": "^6.2.9",
     "@storybook/preset-create-react-app": "^3.1.7",
+    "@storybook/preset-typescript": "^3.0.0",
     "@storybook/react": "^6.2.9",
+    "@storybook/theming": "^6.2.9",
+    "@types/babel-plugin-macros": "^2.8.4",
+    "@types/storybook__addon-info": "^5.2.3",
+    "babel-loader": "8.1.0",
     "babel-plugin-macros": "^3.1.0",
     "paths.macro": "^3.0.1",
     "react-test-renderer": "^17.0.2",
     "storybook-vscode-component": "^1.0.8"
   },
   "dependencies": {
-    "env-cmd": "^10.1.0"
+    "@emotion/react": "^11.4.0",
+    "@material-ui/core": "^4.11.4",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@types/jest": "^26.0.23",
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.7",
+    "env-cmd": "^10.1.0",
+    "path": "^0.12.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^4.0.3",
+    "typescript": "^3.9.7",
+    "web-vitals": "^1.0.1"
   },
   "eslintConfig": {
     "overrides": [
@@ -37,6 +62,18 @@
           "import/no-anonymous-default-export": "off"
         }
       }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   }
 }
